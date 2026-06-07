@@ -1,4 +1,4 @@
-Python# hello-world
+# hello-world
 
 Project simply running a "Hello, world!" program across multiple languages,
 with a python script to run them.
