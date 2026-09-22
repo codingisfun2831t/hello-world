@@ -97,7 +97,8 @@ TOOLS = {
     "lua"   : "lua",
     "ruby"  : "ruby",
     "julia" : "julia",
-    "lisp"  : "sbcl"
+    "lisp"  : "sbcl",
+    "tcl"   : "tclsh"
 }
 
 LANG_NAMES = {
@@ -110,7 +111,8 @@ LANG_NAMES = {
     "ruby"  : "Ruby",
     "bf"    : "Brainfuck",
     "julia" : "Julia",
-    "lisp"  : "Lisp (CommonLisp)"
+    "lisp"  : "Lisp (CommonLisp)",
+    "tcl"   : "Tcl"
 }
 
 def main() -> None:
@@ -195,6 +197,7 @@ def main() -> None:
         if available.get("sh"): total += 1
         if available.get("julia"): total += 1
         if available.get("lisp"): total += 1
+        if available.get("tcl"): total += 1
 
         task = progress.add_task("[bold green]Compiling/running...", total=total)
         
@@ -245,6 +248,11 @@ def main() -> None:
         # Shell
         if available.get("sh"):
             run(f"{TOOLS['sh']} {SRC}/hello.sh", "sh")
+            progress.update(task, advance=1)
+
+        # Tcl
+        if available.get("tcl"):
+            run(f"{TOOLS['tcl']} {SRC}/hello.tcl", "tcl")
             progress.update(task, advance=1)
             
         # Brainfuck

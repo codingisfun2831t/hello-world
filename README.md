@@ -87,6 +87,7 @@ added in the title of that PR.
 | Ruby     | ruby                                                        |
 | Juila    | `curl -fsSL https://install.julialang.org \| sh` in terminal |
 | Lisp     | sbcl                                                        |
+| Tcl      | tclsh                                                       |
 
 Search online on how to install each tool for your distro,
 if your package manager doesn't have it under the tool name
